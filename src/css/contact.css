@@ -28,10 +28,10 @@
 {
     width : 36vw;
     padding : 5vh 3vw;
-    border-top: 2px solid #b48f8f;
-    border-bottom: 2px solid #b48f8f;
-    border-left : 2px solid #b48f8f;
-    border-right : 1px solid #b48f8f;
+    border-top: 4px solid #734646;
+    border-bottom: 4px solid #734646;
+    border-left : 4px solid #734646;
+    border-right : 4px solid #734656;
 }
 .h1
 {
@@ -47,10 +47,10 @@
 {
     width : 36vw;
     padding : 5vh 3vw;
-    border-top: 2px solid #b48f8f;
-    border-bottom: 2px solid #b48f8f;
-    border-left : 1px solid #b48f8f;
-    border-right : 2px solid #b48f8f;
+    border-top: 4px solid #734646;
+    border-bottom: 4px solid #734646;
+    border-left : 0px solid #734646;
+    border-right : 4px solid #734646;
 }
 .ci
 {
@@ -69,7 +69,7 @@
     padding : 0px 20px 2px;
     border : none;
     border-radius: 50px;
-    background-color: #cdc3b6;
+    background-color: #bb8943;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;

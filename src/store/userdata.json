@@ -1,35 +1,32 @@
 [
     {
         "profilePic" : "/static/media/profile.70e62af3e2edac7d4149.png" ,
-        "name" : "Rahul Kumar" ,
-        "email" : "rahulkumar@gmail.com",
-        "password" : "rahulkumar",
-        "role" : "Admin User",
-        "number" : "875496123",
-        "address" : "rtebfj",
+        "name" : "Hritesh Kumar" ,
+        "email" : "hriteshkumar@gmail.com",
+        "password" : "hriteshkumar",
+        "number" : "123456789",
+        "address" : "xyzzzz",
         "state" : "Odisha",
-        "zipcode" : "879412"
+        "zipcode" : "123456"
     },
     {
         "profilePic" : "/static/media/profile.70e62af3e2edac7d4149.png" ,
-        "name" : "Bunny" ,
-        "email" : "bunbunlove05@gmail.com",
-        "password" : "bunbun",
-        "role" : "Normal User",
-        "number" : "875496123",
-        "address" : "rtebfj",
+        "name" : "Jiban" ,
+        "email" : "jibansahoo05@gmail.com",
+        "password" : "sahoo05",
+        "number" : "123456789",
+        "address" : "xyzzzz",
         "state" : "Odisha",
-        "zipcode" : "879412"
+        "zipcode" : "123456"
     },
     {
         "profilePic" : "/static/media/profile.70e62af3e2edac7d4149.png" ,
-        "name" : "Soumya Mohanty" ,
-        "email" : "soumyam076@gmail.com",
-        "password" : "soumyam076",
-        "role" : "Normal User",
-        "number" : "875496123",
-        "address" : "rtebfj",
+        "name" : "Deepak Sahoo" ,
+        "email" : "deepak56@gmail.com",
+        "password" : "deepak56",
+        "number" : "123456789",
+        "address" : "xyzzzz",
         "state" : "Odisha",
-        "zipcode" : "879412"
+        "zipcode" : "123456"
     }
 ]

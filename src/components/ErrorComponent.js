@@ -20,7 +20,6 @@ function LoginContent()
         name : "",
         email : "",
         password : "",
-        role : "",
         number : "",
         address : "",
         state : "",
@@ -35,15 +34,10 @@ function LoginContent()
 
     //for comparing the user's input with the data stored in data.json
     const [goToHome , setGoToHome] = useState(false);
-    const[goTosignin , setGoTosignin] = useState(false);
     const [goToError , setGoToError] = useState(false);
     if (goToHome)
     {
-        return <Navigate to = "/contact" />;
-    }
-    if (goTosignin)
-    {
-        return <Navigate to = "/signin"/>;
+        return <Navigate to = "/home" />;
     }
     if (goToError)
     {
@@ -60,7 +54,6 @@ function LoginContent()
                         email : user.email,
                         password : user.password,
                         name : user.name,
-                        role : user.role,
                         address : user.address,
                         profilePic : user.profilePic,
                         number : user.number,
@@ -70,20 +63,12 @@ function LoginContent()
                     localStorage.setItem ("signin",JSON.stringify(loginData));
                     setUserData(loginData);
                 }
-                if(data.role === "Admin User")
-                {
-                    return (setGoToHome(true));
-                }
-                else
-                {
-                    return (setGoTosignin(true));
-                }
+                return (setGoToHome(true));
             }
             else
             {
                 return(setGoToError(true));
             }
-            //return null;
         })
     };
 
@@ -101,19 +86,19 @@ function LoginContent()
                     <form onSubmit={handleLogin}>
                         <label htmlFor="email" className="logininput">Email</label>
                         <br/>
-                        <input type = "text" id = "email" name = "email" placeholder = "abc@gmail.com" className="logininput1" value = {userData.email} onChange={handleInput} required />
+                        <input type = "text" id = "email" name = "email" placeholder = "xyz@gmail.com" className="logininput1" value = {userData.email} onChange={handleInput} required />
                         <br /><br />
                         <label htmlFor="password">
                             <span className="logininput">Password</span>
-                            <span className="input4">Forgot password?</span>
+                            <span className="input4">Forgot Password ?</span>
                         </label>
                         <input type = {isPassword ? "text":"password"} id = "password" name = "password" placeholder = "**************" className="logininput1" value = {userData.password} onChange={handleInput} required />
                         <button onClick={handleChange} className="eye">{isPassword?<i className="fa-solid fa-eye-slash"></i>:<i className="fa-solid fa-eye"></i>}</button>
                         <br /><br />
-                        <button className="login align" type = "submit" >Log-in</button>
+                        <button className="login align" type = "submit" >Login</button>
                         <br />
                         <div> 
-                            <span className="input2">Don't have an account yet?  </span>
+                            <span className="input2">Don't have an account yet?</span>
                             <span><Link to = "/signin" className = "input3">Sign up for free</Link></span>
                         </div>
                     </form>

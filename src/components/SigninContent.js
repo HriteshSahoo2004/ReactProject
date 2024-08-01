@@ -20,10 +20,6 @@ function SigninContent()
         if(file) {
             reader.readAsDataURL(file);
         }
-        // getBase64(file).then((base64) =>
-        // {
-        //     localStorage["image"] = base64 ;
-        // });
     };
 
 
@@ -32,7 +28,6 @@ function SigninContent()
         name : "",
         email : "",
         password : "",
-        role : "",
         number : "",
         address : "",
         state : "",
@@ -59,15 +54,6 @@ function SigninContent()
         localStorage.setItem ("signin",JSON.stringify(userSignin));
         return setGoToNext(true);
     }
-    // const getBase64 = (file) =>
-    // {
-    //     return new Promise((resolve,reject) =>{
-    //         const reader = new FileReader()
-    //         reader.onload = () => resolve(reader.result)
-    //         reader.onabort = (error) => reject(error)
-    //         reader.readAsDataURL(file)
-    //     })
-    // }
     return (
         <>
             <Topbar />
@@ -75,8 +61,7 @@ function SigninContent()
                 <form onSubmit={handleSigin}>
                     <div className="grid-item1">
                     <br />
-                    <img src = {userSignin.profilePic ? userSignin.profilePic : profile} className = "image" alt = "dp" />
-                    {/* {image ? <img src = {URL.createObjectURL(image)} alt = "dp" className="image"/> : <img src= {profile} alt = "pic" className = "image" id = "dp" /> } */}
+                    <img src = {userSignin.profilePic ? userSignin.profilePic : profile} className = "image" alt = "Profile" />
 
                     <label htmlFor = "upload" ><i className="fa-solid fa-plus icon" ></i></label>
                     <input type = "file" accept = "image/jpeg , image/jpg , image/png" id = "upload" className="display" name = "file" onChange={handleImageChange}/>
@@ -88,19 +73,12 @@ function SigninContent()
                     <br /><br/>
                     <label htmlFor="Email" className="input">Email</label>
                     <br />
-                    <input type = "text" id = "Email" placeholder = "abc@gmail.com" className="input1" name = "email" onChange={handleInput} value = {userSignin.email} required/>
+                    <input type = "text" id = "Email" placeholder = "xyz@gmail.com" className="input1" name = "email" onChange={handleInput} value = {userSignin.email} required/>
                     <br /><br/>
                     <label htmlFor="password" className="input">Password</label>
                     <br />
                     <input type = "password" id = "password" placeholder = "**********" className="input1" name = "password" onChange={handleInput} value = {userSignin.password} required/>
                     <br /><br/>
-                    <label htmlFor = "genre" className = "input">Role</label>
-                    <br />
-                    <input list = "genre" className = "input1" name = "role" onChange={handleInput} value = {userSignin.role} required /> <br /><br />
-                    <datalist id = "genre">
-                        <option value = "Admin User"></option>
-                        <option value = "Normal User"></option>
-                    </datalist>
                     <label htmlFor="number" className="input">Phone Number</label>
                     <br />
                     <input type = "text" id = "number" placeholder = "0123456789" className="input1" name = "number" onChange={handleInput} value = {userSignin.number}required />

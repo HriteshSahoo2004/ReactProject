@@ -21,7 +21,6 @@ function LoginContent()
         name : "",
         email : "",
         password : "",
-        role : "",
         number : "",
         address : "",
         state : "",
@@ -36,15 +35,10 @@ function LoginContent()
 
     //for comparing the user's input with the data stored in data.json
     const [goToUserHome , setGoToUserHome] = useState(false);
-    const[goTosignin , setGoTosignin] = useState(false);
     const [goToError , setGoToError] = useState(false);
     if (goToUserHome)
     {
-        return <Navigate to = "/userhome" />;
-    }
-    if (goTosignin)
-    {
-        return <Navigate to = "/profile" />;
+        return <Navigate to = "/home" />;
     }
     if (goToError)
     {
@@ -59,12 +53,11 @@ function LoginContent()
                 const user = userdata.find((user) => (user.email === userLogin.email)&&(user.password === userLogin.password));
                 if(user) {
                     const loginData = {
+                        profilePic : user.profilePic,
+                        name : user.name,
                         email : user.email,
                         password : user.password,
-                        name : user.name,
-                        role : user.role,
-                        address : user.address,
-                        profilePic : user.profilePic,
+                        address : user.address,                        
                         number : user.number,
                         state : user.state,
                         zipcode : user.zipcode
@@ -72,14 +65,7 @@ function LoginContent()
                     localStorage.setItem ("signin",JSON.stringify(loginData));
                     setUserLogin(loginData);
                 }
-                if(data.role === "Admin User")
-                {
-                    return (setGoTosignin(true));
-                }
-                else
-                {
-                    return (setGoToUserHome(true));
-                }
+                return (setGoToUserHome(true));
             }
             else
             {
@@ -102,16 +88,16 @@ function LoginContent()
                     <form onSubmit={handleLogin}>
                         <label htmlFor="email" className="logininput">Email</label>
                         <br/>
-                        <input type = "text" id = "email" name = "email" placeholder = "abc@gmail.com" className="logininput1" value = {userLogin.email} onChange={handleInput} required/>
+                        <input type = "text" id = "email" name = "email" placeholder = "xyz@gmail.com" className="logininput1" value = {userLogin.email} onChange={handleInput} required/>
                         <br /><br />
                         <label htmlFor="password">
                             <span className="logininput">Password</span>
-                            <span className="input4">Forgot password?</span>
+                            <span className="input4">Forgot Password?</span>
                         </label>
                         <input type = {isPassword ? "text":"password"} id = "password" name = "password" placeholder = "**************" className="logininput1" value = {userLogin.password} onChange={handleInput} required/>
                         <button onClick={handleChange} className="eye">{isPassword?<i className="fa-solid fa-eye-slash"></i>:<i className="fa-solid fa-eye"></i>}</button>
                         <br /><br />
-                        <button className="login align" type = "submit" >Log-in</button>
+                        <button className="login align" type = "submit" >Login</button>
                         <br />
                         <div> 
                             <span className="input2">Don't have an account yet?  </span>
