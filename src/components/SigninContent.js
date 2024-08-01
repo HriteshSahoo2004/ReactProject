@@ -28,6 +28,7 @@ function SigninContent()
         name : "",
         email : "",
         password : "",
+        role : "",
         number : "",
         address : "",
         state : "",
@@ -79,6 +80,13 @@ function SigninContent()
                     <br />
                     <input type = "password" id = "password" placeholder = "**********" className="input1" name = "password" onChange={handleInput} value = {userSignin.password} required/>
                     <br /><br/>
+                    <label htmlFor = "genre" className = "input">Role</label>
+                    <br />
+                    <input list = "genre" className = "input1" name = "role" onChange={handleInput} value = {userSignin.role} required /> <br /><br />
+                    <datalist id = "genre">
+                        <option value = "Admin User"></option>
+                        <option value = "Normal User"></option>
+                    </datalist>
                     <label htmlFor="number" className="input">Phone Number</label>
                     <br />
                     <input type = "text" id = "number" placeholder = "0123456789" className="input1" name = "number" onChange={handleInput} value = {userSignin.number}required />

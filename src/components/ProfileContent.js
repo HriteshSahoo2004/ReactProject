@@ -13,6 +13,7 @@ function ProfileContent()
         name : "",
         email : "",
         password : "",
+        role : "",
         number : "",
         address : "",
         state : "",
@@ -25,6 +26,7 @@ function ProfileContent()
             name : "",
             email : "",
             password : "",
+            role : "",
             number : "",
             address : "",
             state : "",
@@ -98,6 +100,10 @@ function ProfileContent()
                     <br />
                     <input type = "password" id = "password" placeholder = "**********" className="input1" name = "password" value = {userProfile.password? userProfile.password : "************"} onChange={handleChange} required/>
                     <br /><br/>
+                    <label htmlFor = "genre" className = "input">Role</label>
+                    <br />
+                    <input type = "text" className = "input1" name = "role" value = {userProfile.role? userProfile.role : "Normal/Admin"} onChange={handleChange} required/> 
+                    <br /><br />
                     <label htmlFor="number" className="input">Phone Number</label>
                     <br />
                     <input type = "text" id = "number" placeholder = "0123456789" className="input1" name = "number" value = {userProfile.number? userProfile.number : "0123456789"} onChange={handleChange} required />
@@ -148,6 +154,10 @@ function ProfileContent()
                     <br />
                     <input type = "password" id = "password" placeholder = "**********" className="input1" name = "password" value = {userProfile.password? userProfile.password : "***********"} readOnly required/>
                     <br /><br/>
+                    <label htmlFor = "genre" className = "input">Role</label>
+                    <br />
+                    <input type = "text" className = "input1" name = "role" value = {userProfile.role? userProfile.role : "Normal/Admin"} onChange={handleChange} required/> 
+                    <br /><br />
                     <label htmlFor="number" className="input">Phone Number</label>
                     <br />
                     <input type = "text" id = "number" placeholder = "0123456789" className="input1" name = "number" value = {userProfile.number? userProfile.number : "0123456789"}required readOnly />
